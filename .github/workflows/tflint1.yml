@@ -3,7 +3,7 @@ name: Terraform Linting and Deployment
 on:
   push:
     branches:
-      - main
+      - Terraform_master
 
 jobs:
   lint-and-deploy:
