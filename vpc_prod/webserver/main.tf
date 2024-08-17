@@ -15,7 +15,7 @@ provider "aws" {
 data "terraform_remote_state" "Prod_vpc" {
   backend = "s3"
   config = {
-    bucket = "prodgroup12"
+    bucket = "prodgroup012"
     key    = "vpc_prod/networkfile/terraform.tfstate"
     region = "us-east-1"
   }
