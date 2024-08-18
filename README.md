@@ -85,12 +85,23 @@ A NAT gateway will be provisioned in public subnet 1 to allow private subnet VMs
 -deploy EC2 instance
 In this terraform will provision 6 VMs access to subnet, including the bastion host and web server.
 
-3. Configure web servers with Ansible
+
+Note:
+
+
+-we have automated AWS insfrastructure provisioning by running automated pipline thorugh GithubAction.
+
+-First, yo connect your aws account to ypur github account, Go to settings in your Github Repo, then go to Actions folder and select on Secrets and set your AWS Credentials in your repository secrets section. 
+-To run the pipeline : go to your GitHub repository and click on GitHub Action. It will automatically provision the Aws Infrastructure to your aws account
+
+
+
+4. Configure web servers with Ansible
 first we have to SSH into cloud 9 or a provisioned web server
 now we will use ansible to configure the remaining web server using this code
 ansible-playbook -i host.txt playbook.yaml
 
-4. Verify Documents
+5. Verify Documents
 Now we will access the web server via SSH and HTTP and now we will verify internet access for web sever 5 through the NAT Gateway
 
 
