@@ -33,7 +33,7 @@ resource "aws_instance" "bastionhost" {
   key_name        = aws_key_pair.key1.key_name
   security_groups = [data.terraform_remote_state.Prod_vpc.outputs.bastionsg_id]
 
-  user_data = templatefile("install_httpd.sh",
+  user_data = templatefile("install_httpd1.sh",
     {
       env    = upper(var.env),
       prefix = upper(var.prefix)
@@ -53,7 +53,7 @@ resource "aws_instance" "VM5" {
   security_groups = [data.terraform_remote_state.Prod_vpc.outputs.privatesg_id]
 
 
-  user_data = templatefile("install_httpd.sh",
+  user_data = templatefile("install_httpd2.sh",
     {
       env    = upper(var.env),
       prefix = upper(var.prefix)
@@ -72,7 +72,7 @@ resource "aws_instance" "VM6" {
   key_name        = aws_key_pair.key1.key_name
   security_groups = [data.terraform_remote_state.Prod_vpc.outputs.privatesg_id]
 
-  user_data = templatefile("install_httpd.sh",
+  user_data = templatefile("install_httpd2.sh",
     {
       env    = upper(var.env),
       prefix = upper(var.prefix)
