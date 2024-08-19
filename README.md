@@ -108,3 +108,5 @@ Now we will access the web server via SSH and HTTP and now we will verify intern
 Clean Up
 now we will clear all resources with the help of terraform.
 we have to run terraform destroy code to clean up all resources
+
+#Review
